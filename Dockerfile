@@ -1,8 +1,7 @@
 FROM nsqio/nsq
 
-# Install prerequisites
-RUN apt-get update && apt-get install -y \
-	curl
+# Install curl
+RUN apk add --no-cache curl
 
 ADD ./docker-entrypoint.sh /
 RUN chmod +x ./docker-entrypoint.sh
